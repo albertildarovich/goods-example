@@ -1,0 +1,18 @@
+@use '@/shared/styles/variables' as *;
+
+@use '@/shared/styles/variables' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  background: $color-bg-muted;
+}
+
+.header {
+  background: $color-primary;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: flex-end;
+}

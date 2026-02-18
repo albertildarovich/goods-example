@@ -1,0 +1,53 @@
+@use '@/shared/styles/variables' as *;
+
+.badge {
+  :global(.ant-badge-count) {
+    min-width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 11px;
+  }
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $color-bg-neutral;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.cartItemInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.cartItemThumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: $radius-sm;
+  flex-shrink: 0;
+  background: $color-bg-neutral;
+}
+
+.cartItemText {
+  min-width: 0;
+}
+
+.quantityInput {
+  width: 70px;
+}

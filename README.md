@@ -83,34 +83,6 @@ npm test
 npm run test:run
 ```
 
-### Test Structure
-
-- Tests are **colocated** with source files: `ComponentName.test.tsx` or `module.test.ts`
-- Test glob: `src/**/*.{test,spec}.{ts,tsx}`
-- Stack: **Vitest** + **jsdom** + **Testing Library** (React, user-event)
-
-### Writing Tests
-
-1. **React components** — use custom `render` from `@/test/test-utils` (includes QueryClient, Router):
-
-   ```tsx
-   import { render, screen } from '@/test/test-utils';
-   import { MyComponent } from './MyComponent';
-
-   it('renders correctly', () => {
-     render(<MyComponent />);
-     expect(screen.getByRole('button')).toBeInTheDocument();
-   });
-   ```
-
-2. **Units / API / stores** — import from `vitest` directly:
-
-   ```ts
-   import { describe, expect, it, vi } from 'vitest';
-   ```
-
-3. **Setup** (`src/test/setup.ts`) — adds `@testing-library/jest-dom` matchers and mocks `window.matchMedia` for Ant Design.
-
 ## Login
 
 Use any credentials from [DummyJSON Users](https://dummyjson.com/users), for example:

@@ -1,0 +1,222 @@
+@use '@/shared/styles/variables' as *;
+
+.loginContent {
+  padding: 48px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.title {
+  color: $color-text-dark;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-shadow: 0 -2px 0 #ffffff1f;
+  white-space: nowrap;
+  margin: 6px;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  font-size: $font-size-lg;
+  color: $color-text-light;
+  font-family: 'Inter-Medium', Helvetica, sans-serif;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0;
+  line-height: 27px;
+}
+
+.rememberItem {
+  margin: 20px 0 !important;
+}
+
+.submitItem {
+  margin-bottom: 0 !important;
+}
+
+.formWrapper {
+  :global {
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+    .ant-form-item-label {
+      padding-bottom: 6px;
+    }
+    .ant-form-item .ant-form-item-label > label {
+      color: $color-text-dark;
+      font-size: $font-size-lg !important;
+      font-weight: $font-weight-medium;
+    }
+    .ant-input,
+    .ant-input-password {
+      border-radius: $radius-lg;
+      border-color: $color-border-hover;
+      padding: 10px 12px;
+      font-size: $font-size-lg !important;
+    }
+    .ant-input input,
+    .ant-input-password input {
+      font-size: $font-size-lg !important;
+    }
+    .ant-input-affix-wrapper {
+      border-radius: $radius-lg;
+      border: 1px solid $color-border-input;
+      padding: 12px 16px;
+    }
+    .ant-input-affix-wrapper .ant-input {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+    .ant-input-affix-wrapper:hover,
+    .ant-input-affix-wrapper-focused {
+      border-color: $color-primary;
+    }
+    .ant-input-affix-wrapper-focused {
+      box-shadow: 0 0 0 2px $color-primary-light;
+    }
+    .ant-input-prefix {
+      margin-right: 10px;
+      color: $color-text-muted;
+    }
+    .ant-input-clear-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ant-input-password .ant-input {
+      padding: 0;
+    }
+    .ant-input-password-icon {
+      color: $color-text-icon !important;
+    }
+    .ant-input-password-icon .anticon,
+    .ant-input-password-icon svg {
+      color: $color-text-icon !important;
+      fill: currentColor !important;
+      stroke: currentColor !important;
+      width: 24px;
+      height: 24px;
+      display: flex;
+    }
+    .ant-checkbox-label {
+      color: $color-text-faint;
+      font-size: $font-size-md;
+      font-weight: $font-weight-medium;
+    }
+    .ant-checkbox-inner {
+      border-radius: $radius-sm;
+      border-color: $color-border-hover;
+    }
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.inputIcon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.clearIcon {
+  width: 14px;
+  height: 16px;
+  margin-right: 8px;
+  display: block;
+}
+
+.checkboxIcon {
+  width: 24px !important;
+  height: 24px !important;
+  border: 2px var(--ant-line-type) var(--ant-color-border);
+
+  &:global(.ant-checkbox-checked)::after {
+    width: 9px !important;
+    height: 14px !important;
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    margin-left: -4.5px !important;
+    margin-top: -9px !important;
+    transform: rotate(45deg) scale(1) !important;
+  }
+}
+
+.visibilityIconWrapper {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $color-text-muted;
+
+  svg {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
+
+.submitBtn {
+  height: 54px;
+  border-radius: 8px;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  background: $color-primary !important;
+  border-color: $color-primary !important;
+
+  &:hover {
+    background: $color-primary-hover !important;
+    border-color: $color-primary-hover !important;
+    opacity: 0.95;
+  }
+}
+
+.separator {
+  margin: 16px 0 20px;
+
+  :global(.ant-divider-inner-text) {
+    color: $color-text-muted;
+    font-size: $font-size-md;
+  }
+}
+
+.footer {
+  text-align: center;
+}
+
+.footerText {
+  color: $color-text-subtle;
+  font-size: $font-size-lg;
+}
+
+.footerLink {
+  color: $color-primary !important;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  border-bottom: 1px solid $color-primary !important;
+
+  &:hover {
+    color: $color-primary-hover;
+    text-decoration: none;
+  }
+}
+
+.error {
+  color: $color-error;
+  font-size: $font-size;
+  margin-bottom: 16px;
+}

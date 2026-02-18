@@ -1,0 +1,360 @@
+@use '@/shared/styles/variables' as *;
+
+.root {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+}
+
+.separator {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: $color-bg-subtle;
+  padding: $spacing-xl 0;
+  margin: 0 (-$spacing-lg);
+  padding-left: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+
+.card {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: $color-white;
+  border: 1px solid $color-bg-neutral;
+  border-radius: 0;
+
+  :global(.ant-card-body) {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-xl;
+    background: $color-white;
+  }
+}
+
+.cardHeader {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.reloadBtn {
+  width: 42px !important;
+  height: 42px;
+  background: $color-white !important;
+  border-color: $color-border !important;
+  color: $color-text-secondary;
+
+  img {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  &:hover {
+    background: #eaeaea !important;
+    border-color: $color-border-hover !important;
+  }
+}
+
+.addBtn {
+  height: 42px;
+  width: 147px;
+  font-weight: 600;
+
+  :global(.ant-btn-icon) {
+    margin-right: 7px;
+    :global(.anticon svg) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  
+}
+
+.brandColumn {
+  font-weight: 600 !important;
+}
+
+.priceCell {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.priceDecimals {
+  color: $color-text-disabled;
+}
+
+.tableWrapper {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+
+  :global(.ant-table-thead > tr) {
+    height: 73px;
+  }
+
+  :global(.ant-table-thead > tr > th:first-child) {
+    padding-left: 15px !important;
+  }
+
+  :global(.ant-table-thead > tr > th:not(:first-child)) {
+    padding-inline-start: 24px !important;
+  }
+
+  :global(.ant-table-thead > tr > th) {
+    height: 73px !important;
+    background: $color-white !important;
+    color: $color-text-muted-alt !important;
+    border-inline-end: none !important;
+    border-bottom: 2px var(--ant-line-type) #e2e2e2;
+
+    &:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+      display: none !important;
+    }
+  }
+
+  :global(.ant-table-cell) {
+    overflow: hidden;
+  }
+
+  :global(.ant-checkbox-wrapper) {
+    :global(.ant-checkbox),
+    :global(.ant-checkbox-inner) {
+      width: 22px !important;
+      height: 22px !important;
+      box-sizing: border-box !important;
+    }
+
+    :global(.ant-checkbox) {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  :global(.ant-checkbox-inner) {
+    border-radius: $radius-md;
+    border-color: $color-border-hover;
+  }
+
+  :global(.ant-checkbox-indeterminate) {
+    :global(.ant-checkbox-inner) {
+      background-color: $color-checkbox !important;
+      border-color: $color-checkbox !important;
+    }
+
+    &::after {
+      background-color: $color-checkbox !important;
+    }
+  }
+
+  :global(.ant-checkbox-checked) {
+    background-color: $color-checkbox !important;
+    border-color: $color-text-muted-alt !important;
+
+    &::after {
+      display: none !important;
+    }
+
+    :global(.ant-checkbox-inner) {
+      background-color: $color-checkbox !important;
+      border-color: $color-text-muted-alt !important;
+
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  :global(.ant-table-tbody > tr > th),
+  :global(.ant-table-tbody > tr > td) {
+    border-bottom: 2px var(--ant-line-type) $color-border-light;
+  }
+
+  :global(.ant-table-tbody > tr > td:first-child) {
+    padding-left: 15px !important;
+  }
+
+  :global(.ant-table-tbody .ant-table-row.ant-table-row-selected > td) {
+    background: $color-bg-hover !important;
+  }
+
+  :global(.ant-table-tbody .ant-table-row.ant-table-row-selected > td:first-child) {
+    position: relative;
+    padding-left: 15px !important;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: $spacing-xs;
+      background: $color-checkbox;
+    }
+  }
+}
+
+.loaderOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-overlay;
+  z-index: 1;
+}
+
+.moreBtn {
+  margin-left: 30px;
+  border-radius: 50% !important;
+  width: 29px !important;
+  min-width: 29px !important;
+  height: 29px !important;
+  padding: 0 !important;
+  border-color: $color-text-muted-alt !important;
+  background: $color-white !important;
+  color: $color-text-secondary !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px;
+
+  :global(.anticon) {
+    margin-inline-end: 0 !important;
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $color-text-muted-alt;
+    }
+  }
+
+  &:hover {
+    border-color: $color-border-hover !important;
+    background: $color-bg-muted !important;
+    color: $color-text-secondary !important;
+  }
+}
+
+.addRowBtn {
+  border-radius: 9999px !important;
+  padding-inline: 12px !important;
+  width: 52px !important;
+  height: 27px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  :global(.anticon) {
+    margin-inline-end: 0 !important;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+  }
+}
+
+.cardHeader :global(.ant-btn-primary) {
+  background: $color-primary !important;
+  border-color: $color-primary !important;
+
+  &:hover {
+    background: $color-primary-hover !important;
+    border-color: $color-primary-hover !important;
+  }
+}
+
+.cardTitle {
+  font-weight: $font-weight-medium;
+}
+
+.productCell {
+  min-width: 0;
+  overflow: hidden;
+  gap: 18px !important;
+}
+
+.productText {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+
+  :global(.ant-typography) {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.thumbnailWrap {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: $color-bg-neutral;
+  border-radius: $radius-sm;
+  overflow: hidden;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.productTitle {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.productCategory {
+  font-size: $font-size-sm;
+  color: $color-text-category;
+  margin-top: 10px;
+}
+
+.ratingLow {
+  color: $color-error;
+}
+
+.pagination {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.paginationInfo {
+  color: $color-text-muted-dark;
+  font-size: $font-size;
+}
+
+.paginationNumbers {
+  color: $color-text-body;
+}
+
+:global(.ant-pagination-item) {
+  border: 1px solid $color-border-light !important;
+}
+
+:global(.ant-pagination-item-active) {
+  background-color: $color-primary !important;
+  border-color: $color-primary !important;
+
+  a {
+    color: $color-white !important;
+  }
+}
+
+.tableTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+}
